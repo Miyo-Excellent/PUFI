@@ -1,0 +1,46 @@
+@import '../../../../../../scss/mixins/flex';
+
+@import '../../../../../../scss/mixins/btn';
+
+.shop {
+    @include flex();
+    bottom: 10%;
+    display: block;
+    height: 50px;
+    margin: auto;
+    left: 50%;
+    padding: 2px 0;
+    position: absolute;
+    right: 50%;
+    top: auto;
+    transform: translate(-50%, 0);
+    transition: all linear 100ms;
+    width: 160px;
+    z-index: 10;
+    &:hover {
+        transform: translate(-50%, 0) scale(1.1);
+        > * {
+            border-radius: 5px;
+            background: hsla(0, 0%, 0%, .3);
+        }
+
+        &:active {
+            transform: translate(-50%, 0) scale(.9);
+            > * {
+                border-radius: 10px;
+                background: hsla(0, 0%, 0%, .2);
+            }
+        }
+    }
+    > * {
+        @include flex();
+        width: 100%;
+        height: 100%;
+        background: hsla(0, 0%, 0%, .1);
+        border: 3px solid hsla(0, 0%, 100%, 1);
+        border-radius: 0;
+        font-size: 1.1rem;
+        font-weight: lighter;
+        color: hsla(0, 0%, 100%, 1);
+    }
+}

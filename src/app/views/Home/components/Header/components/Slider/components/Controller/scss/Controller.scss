@@ -1,0 +1,82 @@
+@mixin base(
+    $width: 20px,
+    $height: 100%,
+    $margin: auto 10px,
+    $border-radius: 50%,
+    $transition: all linear 100ms,
+    $background: hsla(0, 0%, 100%, .5),
+    $background-hover: hsla(0, 0%, 100%, .7),
+    $background-active: hsla(0, 0%, 100%, .9),
+
+    $border-position: absolute,
+    $border-width: 138%,
+    $border-height: 138%,
+    $border-top: 50%,
+    $border-bottom: 50%,
+    $border-left: 50%,
+    $border-right: 50%,
+    $border-transform: translate(-50%, -50%),
+    $border-border-radius: 50%
+
+) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+    border-radius: $border-radius;
+    background: $background;
+    transition: $transition;
+
+    &:hover {
+        transform: scale(1.1);
+        background: $background-hover;
+        &:active {
+            transform: scale(.9);
+            background: $background-active;
+        }
+    }
+
+    .border {
+        position: $border-position;
+        border: 2px solid $background;
+        width: $border-width;
+        height: $border-height;
+        top: $border-top;
+        bottom: $border-bottom;
+        left: $border-left;
+        right: $border-right;
+        transform: $border-transform;
+        border-radius: $border-border-radius;
+        &:hover {
+            background: $background-hover;
+            &:active {
+                background: $background-active;
+            }
+        }
+    }
+}
+
+
+.controller {
+    z-index: 5;
+    position: absolute;
+    top: auto;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    .picture {
+        @include base();
+        &_active {
+            @include base(
+                $background: hsla(200, 100%, 50%, .5),
+                $background-hover: hsla(200, 100%, 50%, .7),
+                $background-active: hsla(200, 100%, 50%, .9)
+            );
+        }
+    }
+}

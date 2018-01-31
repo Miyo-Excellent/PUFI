@@ -52,6 +52,22 @@ export default type => {
           }
         }
       ]
+    },
+    {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+    },
+    {
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      loader: 'url-loader',
+      options: {
+        name: 'fonts/[name].[ext]',
+        limit: 50
+      }
+    },
+    {
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'file-loader'
     }
   ];
 
@@ -96,6 +112,9 @@ export default type => {
             options: {
               sourceMap: true
             }
+          },
+          {
+            loader: 'resolve-url-loader'
           }
         ]
       })
@@ -109,6 +128,9 @@ export default type => {
           options: {
             sourceMap: false
           }
+        },
+        {
+          loader: 'resolve-url-loader'
         },
         {
           loader: 'css-loader',

@@ -1,0 +1,34 @@
+@mixin input (
+    $line-width: 2px,
+    $line-color: hsla(0, 0%, 100%, 1),
+    $color: hsl(0, 0%, 9%),
+    $background: hsla(0, 0%, 100%, 1),
+    $background-focus: hsl(210, 100%, 56%),
+    $font-size: .9rem,
+    $border: 2px solid hsla(0, 0%, 50%, 1),
+    $border-radius: 5px,
+    $width: 100%,
+    $height: 25px,
+    $padding: 2px 0,
+    $padding-children: 0 0 0 5px
+) {
+
+    width: $width;
+    height: $height;
+    padding: $padding;
+
+    > * {
+        color: $color;
+        border: $border;
+        background: $background;
+        border-radius: $border-radius;
+        font-size: $font-size;
+        padding: $padding-children;
+        width: 100%;
+        height: 100%;
+        &:focus {
+            background: $background-focus;
+            border: none;
+        }
+    }
+}

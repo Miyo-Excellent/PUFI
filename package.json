@@ -118,6 +118,7 @@
     "react-hot-loader": "^3.1.2",
     "remote-redux-devtools": "^0.5.12",
     "remotedev-server": "^0.2.4",
+    "resolve-url-loader": "^2.2.1",
     "responsive-loader": "^1.1.0",
     "sass-loader": "^6.0.6",
     "serve-favicon": "^2.4.5",

@@ -1,3 +1,15 @@
+// Rests
+@import './rests/customRests';
+
+// Globals
+@import './globals/mixins';
+@import './globals/placeholders';
+@import './globals/vars';
+
+// Libreries
+
 .home {
     display: block;
+    width: 100%;
+    height: 100%;
 }

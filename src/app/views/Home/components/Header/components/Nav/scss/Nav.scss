@@ -1,0 +1,10 @@
+.navbar {
+    position: fixed;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.555);
+    display: grid;
+    grid: 100% / 50px 1fr 275px;
+    grid-gap: 5px;
+    height: 50px;
+    z-index: 1;
+}

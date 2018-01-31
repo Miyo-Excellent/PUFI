@@ -1,0 +1,70 @@
+@import '../../../../../../../scss/mixins/flex';
+
+$link-bg: hsla(210, 100%, 56%, .5);
+$link-bg-hover: hsla(210, 100%, 56%, 1);
+$link-color:   hsl(0, 0%, 100%);
+$link-color-hover:   rgb(255, 255, 255);
+
+.menuList {
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+    grid-row: 100%;
+    grid-auto-columns: minmax(75px, auto);
+    grid-gap: 5px;
+    >.link {
+        grid-row: 1;
+        @include flex($justify-content: space-evenly);
+        &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            position: absolute;
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            background: $link-bg;
+            opacity: 0;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+                opacity: 1;
+                background: $link-bg-hover;
+            }
+            a {
+                .icon,
+                .text span{
+                    color:  $link-color-hover;
+                    transform: scale(1.2);
+                }
+            }
+        }
+        a {
+            width: 100%;
+            height: 100%;
+            @include flex($flex-flow: column nowrap);
+            .icon,
+            .text span{
+                color:  $link-color;
+                transform: scale(1.2);
+            }
+            .icon {
+                @include flex($flex-flow: column nowrap);
+                >img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .text {
+                @include flex($flex-flow: column nowrap);
+                >span {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

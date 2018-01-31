@@ -1,0 +1,25 @@
+@import '../../../../../../../../../scss/mixins/flex';
+
+@import '../../../../../../../../../scss/mixins/btn';
+
+@import '../../../../../../../../../scss/mixins/input';
+
+%flex {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.myShop {
+    grid-column: 2;
+    grid-row: 1;
+    @extend %flex;
+    .container {
+        @extend %flex;
+    }
+}
+
+.btn {
+    @include btn();
+}

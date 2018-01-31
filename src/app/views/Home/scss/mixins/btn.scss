@@ -1,0 +1,456 @@
+@mixin btn-theme(
+    $btn-theme-border-color:hsl(0, 50%, 70%),
+    $btn-theme-background: hsl(0, 50%, 80%),
+    $btn-theme-background-active: hsl(0, 50%, 60%),
+    $btn-theme-background-hover: hsl(0, 50%, 85%),
+    $btn-theme-color: hsl(0, 50%, 15%)
+) {
+    border: 2px solid hsl(0, 50%, 70%) $btn-theme-border-color;
+    background: $btn-theme-background;
+    color: $btn-theme-color;
+    &:hover {
+        background: $btn-theme-background-hover;
+        &:active {
+            background: $btn-theme-background-active;
+        }
+    }
+}
+
+@mixin btn(
+    $border: 2px solid hsl(0, 0%, 70%),
+
+    $border-color:hsl(0, 0%, 70%),
+    $background: hsl(0, 0%, 80%),
+    $background-active: hsl(0, 0%, 60%),
+    $background-hover: hsl(0, 0%, 85%),
+    $color: hsl(0, 0%, 100%),
+
+    $border-dogger: 2px solid hsl(210, 50%, 41%),
+    $border-color-dogger:hsl(210, 50%, 41%),
+    $background-dogger: hsl(210, 53%, 59%),
+    $background-active-dogger: hsl(210, 87%, 64%),
+    $background-hover-dogger: hsl(210, 52%, 39%),
+    $color-dogger: hsl(0, 0%, 100%),
+
+    $border-success: 2px solid hsl(109, 50%, 41%),
+    $border-color-success:hsl(109, 50%, 41%),
+    $background-success: hsl(109, 53%, 59%),
+    $background-active-success: hsl(109, 87%, 64%),
+    $background-hover-success: hsl(109, 52%, 39%),
+    $color-success: hsl(0, 0%, 100%),
+
+    $border-warning: 2px solid hsl(60, 50%, 41%),
+    $border-color-warning:hsl(60, 50%, 41%),
+    $background-warning: hsl(60, 53%, 59%),
+    $background-active-warning: hsl(60, 87%, 64%),
+    $background-hover-warning: hsl(60, 52%, 39%),
+    $color-warning: hsl(0, 0%, 100%),
+
+    $border-error: 2px solid hsl(0, 50%, 41%),
+    $border-color-error:hsl(0, 50%, 41%),
+    $background-error: hsl(0, 53%, 59%),
+    $background-active-error: hsl(0, 87%, 64%),
+    $background-hover-error: hsl(0, 52%, 39%),
+    $color-error: hsl(0, 0%, 100%),
+
+    $font-size: 1rem,
+    $border-radius: 5px,
+    $height: 100%,
+    $margin: auto,
+    $width: auto,
+
+    $home-product-width: auto,
+    $home-product-margin: auto,
+    $home-product-height: 100%,
+    $home-product-border: 2px solid hsl(0, 0%, 70%),
+    $home-product-border-radius: 5px,
+    $home-product-border-color:hsl(0, 0%, 70%),
+    $home-product-background: hsl(0, 0%, 80%),
+    $home-product-background-active: hsl(0, 0%, 60%),
+    $home-product-background-hover: hsl(0, 0%, 85%),
+    $home-product-color: hsl(0, 0%, 100%),
+
+    $home-product-shop-width: auto,
+    $home-product-shop-margin: auto,
+    $home-product-shop-height: 100%,
+    $home-product-shop-border: 2px solid hsla(0, 0%, 100%, 1),
+    $home-product-shop-border-color-hover: hsla(120, 60%, 70%, 1),
+    $home-product-shop-border-color-active:hsla(120, 60%, 70%, 1),
+    $home-product-shop-border-radius: 3px,
+    $home-product-shop-border-color:hsla(0, 0%, 100%, 1),
+    $home-product-shop-background: hsla(0, 0%, 100%, .2),
+    $home-product-shop-background-active: hsla(0, 0%, 100%, .3),
+    $home-product-shop-background-hover: hsla(0, 0%, 100%, .2),
+    $home-product-shop-color: hsla(0, 0%, 100%, 1),
+    $home-product-shop-color-hover: hsla(0, 0%, 0%, .7),
+    $home-product-shop-color-active: hsla(0, 0%, 0%, .7)
+    ) {
+
+        transition: all linear 150ms;
+    height: 25px;
+    width: $width + 20px;
+    margin: $margin;
+    padding: 2px 0;
+
+    &_large {
+        transition: all linear 150ms;
+        display: block;
+        height: 25px;
+        width: $width;
+        margin: $margin;
+        padding: 2px 0;
+        >*{
+            border: 2px solid $border-color;
+            border-radius: $border-radius;
+            background: $background;
+            width: 100%;
+            height: 100%;
+            padding: 0 2px;
+            &:hover {
+                background: $background-hover;
+
+                &:active {
+                    background: $background-active;
+                }
+            }
+        }
+    }
+
+    &_home_product {
+        transition: all linear 150ms;
+        display: block;
+        height: 25px;
+        width: $home-product-width;
+        margin: $home-product-margin;
+        padding: 2px 0;
+        >*{
+            /*
+            border: 2px solid $home-product-border-color;
+            border-radius: $home-product-border-radius;
+            background: $home-product-background;
+            */
+            width: 100%;
+            height: 100%;
+            padding: 0 2px;
+            font-size: 1.25rem;
+            padding: 5px 20px;
+            transition: all linear 100ms;
+            &:hover{
+                &::before {
+                    width: 115%;
+                }
+                &::after {
+                    left: 0;
+                    color: $home-product-background;
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: auto;
+                bottom: 0;
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%, -50%);
+                display: block;
+                width: 0;
+                height: 2px;
+                background: $home-product-background;
+            }
+            &::after {
+                content: '>';
+                @include flex();
+                font-size: 1.5rem;
+                font-weight: bolder;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                top: 50%;
+                bottom: 50%;
+                left: -20px;
+                transform: translate(-50%,-50%);
+            }
+            &:hover {
+                //background: $home-product-background-hover;
+
+                &:active {
+                    //background: $home-product-background-active;
+                }
+            }
+        }
+    }
+
+    &_home_product_shop {
+        transition: all linear 100ms;
+        display: block;
+        height: 25px;
+        width: $home-product-shop-width;
+        margin: $home-product-shop-margin;
+        padding: 2px 0;
+        &:hover {
+            transform: scale(1.1);
+            &:active {
+                transform: scale(.9);
+            }
+        }
+        >*{
+            transition: all linear 100ms;
+            border: 2px solid $home-product-shop-border-color;
+            border-radius: $home-product-shop-border-radius;
+            background: $home-product-shop-background;
+            color: $home-product-shop-color;
+            box-shadow: 0 0 5px $home-product-shop-border-color;
+            width: 100%;
+            height: 100%;
+            padding: 0 2px;
+            font-size: 1.25rem;
+            padding: 5px 20px;
+            &:hover {
+                color: $home-product-shop-border-color-hover;
+                background: $home-product-shop-background-hover;
+                border: 2px solid $home-product-shop-border-color-hover;
+                box-shadow: 0 0 10px $home-product-shop-border-color-hover;
+
+                &:active {
+                    border: 2px solid $home-product-shop-border-color-active;
+                    color: $home-product-shop-border-color-active;
+                    background: $home-product-shop-background-active;
+                    box-shadow: 0 0 15px $home-product-shop-border-color-active;
+                }
+            }
+        }
+    }
+
+    &_circle {
+        @include flex($flex-flow: column nowrap);
+        $size: 20px;
+        %base {
+            @include flex($flex-flow: row nowrap);
+            transition: all linear 150ms;
+            height: $height;
+            width: $width;
+            border: none;
+            border-radius: none;
+            background: none;
+            margin: auto;
+        }
+        @extend %base;
+
+        &_blue {
+            @extend %base;
+            @include flex($flex-flow: column nowrap);
+            > * {
+                @include flex($flex-flow: column nowrap);
+                @include btn-theme(
+                    $btn-theme-border-color:hsl(210, 100%, 70%),
+                    $btn-theme-background: hsl(210, 100%, 80%),
+                    $btn-theme-background-active: hsl(210, 100%, 60%),
+                    $btn-theme-background-hover: hsl(210, 100%, 85%),
+                    $btn-theme-color: hsl(210, 100%, 15%)
+                    );
+                    height: $size;
+                    width: $size;
+                    border-radius: 50%;
+                }
+            }
+
+            &_orange {
+                @include flex($flex-flow: column nowrap);
+                @extend %base;
+            > * {
+                @include flex($flex-flow: column nowrap);
+                @include btn-theme(
+                    $btn-theme-border-color:hsl(25, 100%, 70%),
+                    $btn-theme-background: hsl(25, 100%, 80%),
+                    $btn-theme-background-active: hsl(25, 100%, 60%),
+                    $btn-theme-background-hover: hsl(25, 100%, 85%),
+                    $btn-theme-color: hsl(25, 100%, 15%)
+                );
+                height: $size;
+                width: $size;
+                border-radius: 50%;
+            }
+        }
+
+        &_red {
+            @include flex($flex-flow: column nowrap);
+            @extend %base;
+            > * {
+                @include flex($flex-flow: column nowrap);
+                @include btn-theme(
+                    $btn-theme-border-color:hsl(0, 100%, 70%),
+                    $btn-theme-background: hsl(0, 100%, 80%),
+                    $btn-theme-background-active: hsl(0, 100%, 60%),
+                    $btn-theme-background-hover: hsl(0, 100%, 85%),
+                    $btn-theme-color: hsl(0, 100%, 15%)
+                );
+                height: $size;
+                width: $size;
+                border-radius: 50%;
+            }
+        }
+
+        &_green {
+            @include flex($flex-flow: column nowrap);
+            @extend %base;
+            > * {
+                @include flex($flex-flow: column nowrap);
+                @include btn-theme(
+                    $btn-theme-border-color:hsl(120, 100%, 70%),
+                    $btn-theme-background: hsl(120, 100%, 80%),
+                    $btn-theme-background-active: hsl(120, 100%, 60%),
+                    $btn-theme-background-hover: hsl(120, 100%, 85%),
+                    $btn-theme-color: hsl(120, 100%, 15%)
+                );
+                height: $size;
+                width: $size;
+                border-radius: 50%;
+            }
+        }
+
+        > * {
+            @include flex($flex-flow: column nowrap);
+            height: $size;
+            width: $size;
+            border-radius: 50%;
+
+            &:hover {
+                background: $background-hover;
+                &:active {
+                    background: $background-active;
+                }
+            }
+        }
+    }
+
+    &_success {
+        transition: all linear 150ms;
+        display: block;
+        height: $height;
+        width: $width;
+        > * {
+            padding: 0 5px;
+            width: 100%;
+            height: 25px;
+            border-radius: $border-radius;
+            border: 2px solid $border-color-success;
+            //background: $background-success;
+            &:hover {
+                background: $background-hover-success;
+
+                &:active {
+                    background: $background-active-success;
+                }
+            }
+            &,
+            * {
+                color: $color-success;
+            }
+        }
+    }
+
+    &_dogger {
+        transition: all linear 150ms;
+        display: block;
+        height: $height;
+        width: $width;
+        border-radius: $border-radius;
+        > * {
+            display: block;
+            padding: 0 5px;
+            width: 100%;
+            height: 25px;
+            border-radius: $border-radius;
+            border: 2px solid $border-color-dogger;
+            //background: $background-dogger;
+            &:hover {
+                background: $background-hover-dogger;
+
+                &:active {
+                    background: $background-active-dogger;
+                }
+            }
+            &,
+            * {
+                color: $color-dogger;
+            }
+        }
+        &:hover {
+            background: $background-hover-dogger;
+            &:active {
+                background: $background-active-dogger;
+            }
+        }
+    }
+
+    &_warning {
+        transition: all linear 150ms;
+        display: block;
+        height: $height;
+        width: $width;
+        > * {
+            padding: 0 5px;
+            width: 100%;
+            height: 25px;
+            border-radius: $border-radius;
+            border: 2px solid $border-color-warning;
+            background: $background-warning;
+            &:hover {
+                background: $background-hover-warning;
+
+                &:active {
+                    background: $background-active-warning;
+                }
+            }
+            &,
+            * {
+                color: $color-warning;
+            }
+        }
+    }
+
+    &_error {
+        color: $color-error;
+        transition: all linear 150ms;
+        display: block;
+        height: $height;
+        width: $width;
+        > * {
+            padding: 0 5px;
+            width: 100%;
+            height: 25px;
+            border: 2px solid $border-color-error;
+            background: $background-error;
+            &:hover {
+                background: $background-hover-error;
+
+                &:active {
+                    background: $background-active-error;
+                }
+            }
+            &,
+            * {
+                color: $color-error;
+            }
+        }
+    }
+
+    > * {
+        padding: 0 5px;
+        width: 100%;
+        height: 25px;
+        border: 2px solid $border-color;
+        background: $background;
+        &:hover {
+            background: $background-hover;
+
+            &:active {
+                background: $background-active;
+            }
+        }
+        &,
+        * {
+            color: $color;
+        }
+    }
+}
