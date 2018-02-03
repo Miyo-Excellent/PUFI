@@ -43,9 +43,12 @@ $link-color-hover:   rgb(255, 255, 255);
             }
         }
         a {
+            @include flex($flex-flow: row nowrap, $justify-content: space-evenly);
+            @media all and (max-width: 950px) {
+                @include flex($justify-content: space-evenly, $flex-flow: column nowrap);
+            }
             width: 100%;
             height: 100%;
-            @include flex($flex-flow: column nowrap);
             .icon,
             .text span{
                 color:  $link-color;
@@ -54,8 +57,70 @@ $link-color-hover:   rgb(255, 255, 255);
             .icon {
                 @include flex($flex-flow: column nowrap);
                 >img {
+                    display: block;
+                    width: 35px;
+                    height: auto;
+                }
+            }
+            .text {
+                @include flex($flex-flow: column nowrap);
+                >span {
                     width: 100%;
                     height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.menuList_mobile {
+    display: grid;
+    grid-column: 100%;
+    grid-auto-rows: minmax(75px, auto);
+    >.link {
+        grid-column: 1;
+        &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            position: absolute;
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            background: $link-bg;
+            opacity: 0;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+                opacity: 1;
+                background: $link-bg-hover;
+            }
+            a {
+                .icon,
+                .text span{
+                    color:  $link-color-hover;
+                    transform: scale(1.2);
+                }
+            }
+        }
+        a {
+            @include flex($flex-flow: row nowrap, $justify-content: space-evenly);
+            width: 100%;
+            height: 100%;
+            .icon,
+            .text span{
+                color:  $link-color;
+                transform: scale(1.2);
+            }
+            .icon {
+                @include flex($flex-flow: column nowrap);
+                >img {
+                    display: block;
+                    width: 35px;
+                    height: auto;
                 }
             }
             .text {

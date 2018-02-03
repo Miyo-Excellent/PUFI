@@ -5,6 +5,68 @@
     display: grid;
     grid: 100% / 50px 1fr 275px;
     grid-gap: 5px;
-    height: 50px;
+    height: auto;
     z-index: 1;
+    padding: 0 10px;
+}
+
+.navbar_mobile {
+    position: fixed;
+    width: 100vw;
+    background: rgba(0, 0, 0, .8);
+    display: grid;
+    grid: 100px auto auto / 100%;
+    grid-gap: 5px;
+    z-index: 15;
+    padding: 0 10px;
+}
+
+.btn_menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    .icon {
+        &,
+        * {
+            z-index: 10;
+            color: aliceblue !important;
+            cursor: pointer;
+            font-size: 3rem;
+        }
+    }
+}
+
+.exit {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    transition: all linear 100ms;
+    >*{
+        &:hover {
+            transform: scale(.9);
+            &,
+            *,
+            *::after,
+            *::before {
+                color: hsla(20, 90%, 50%, 1);
+            }
+        }
+        &:active {
+            transform: scale(.8);
+            &,
+            *,
+            *::after,
+            *::before {
+                color: hsla(20, 90%, 40%, 1);
+            }
+        }
+        &,
+        *,
+        *::after,
+        *::before {
+            font-size: 2rem;
+            color: #FFF;
+            cursor: pointer;
+        }
+    }
 }

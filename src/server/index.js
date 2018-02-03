@@ -53,6 +53,9 @@ app.listen(port, err => { // Listening
     // open(`http://localhost:${port}`);
 
     console.log(`
+    ${process.env.NODE_ENV}
+    ${process.env.NODE_PORT}
+    ${process.env.BABEL_ENV}
     ============================================================================================================================
     |·─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─··─·─··─··─·|
     |·─ Aplicación corriendo en: ==>  http://localhost:${port}  <== Abrir enlace con (Ctrl + Clic) en Windows, Linux, MAC ─··─·|

@@ -20,6 +20,15 @@
     }
 }
 
+.myShop_mobile {
+    grid-row: 2;
+    grid-column: 1;
+    @extend %flex;
+    .container {
+        @extend %flex;
+    }
+}
+
 .btn {
     @include btn();
 }

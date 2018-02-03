@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 // Components
 
 // Libreries
@@ -10,43 +11,11 @@ import { Link } from 'react-router-dom';
 import styles from './scss/Menu.scss';
 
 const Menu = ({
-  links = [
-    {
-      name: "PUFI PUFF",
-      picture: {
-        url: "#",
-        alt: "PUFI PUFF"
-      },
-      path: "/products/pufi-puff"
-    },
-    {
-      name: "PUFI RAIN",
-      picture: {
-        url: "#",
-        alt: "PUFI RAIN"
-      },
-      path: "/products/pufi-rain"
-    },
-    {
-      name: "PUFI CART",
-      picture: {
-        url: "#",
-        alt: "PUFI CART"
-      },
-      path: "/products/pufi-cart"
-    },
-    {
-      name: "PUFI NAP",
-      picture: {
-        url: "#",
-        alt: "PUFI NAP"
-      },
-      path: "/products/pufi-nap"
-    }
-  ]
+  links = [],
+  isMobile
 }) => {
   return (
-    <ul className={`${styles.menuList}`}>{ links.map((link, index, arr) =>
+    <ul className={isMobile ? `${styles.menuList_mobile}` : `${styles.menuList}`}>{ links.map((link, index, arr) =>
       <li className={`${styles.link}`} key={index}>{
         link.picture.url !== "#"
         && link.picture.url !== ""
@@ -72,6 +41,8 @@ const Menu = ({
 };
 
 const mapStateToProps = state => ({
+  links: state.home.nav.menu.links,
+  isMobile: state.devices.isMobile
 });
 
 const mapDispatchToProps = dispatch => ({});

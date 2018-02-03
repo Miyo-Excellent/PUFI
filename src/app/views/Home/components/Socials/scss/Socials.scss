@@ -1,0 +1,113 @@
+@import '../../../scss/mixins/flex';
+@mixin title ($font-size: 2rem, $color: #333) {
+    @include flex();
+    * {
+        font-size: $font-size;
+        color: $color;
+    }
+}
+.socials {
+    width: 100%;
+    height: 736px;
+    z-index: -2;
+    display: grid;
+    grid-column: 100%;
+    grid-auto-rows: auto;
+    margin: 5px 0;
+    .social {
+        @include flex($flex-flow: column nowrap);
+        height: 100%;
+        width: 75%;
+        min-width: 75%;
+        max-width: 75%;
+        flex: 1 1 auto;
+        margin: 0 auto 5px auto;
+        &:first-child {
+            margin: 5px auto;
+        }
+        &:last-child {
+            margin: auto auto;
+        }
+        .gallery {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid: 1fr 1fr / 1fr 1fr 1fr;
+            grid-gap: 5px;
+            .picture {
+                background-size: cover !important;
+                overflow: hidden !important;
+            }
+        }
+    }
+    .instagram {
+        &_title {
+            @include title($font-size: 1.5rem, $color: hsla(0, 0%, 30%, 1));
+        }
+        &_user {
+            @include title($font-size: 2.5rem, $color: hsla(345, 80%, 55%, 1));
+        }
+    }
+    .facebook {
+        &_title {
+            @include title($font-size: 1.5rem, $color: hsla(0, 0%, 30%, 1));
+        }
+        &_user {
+            @include title($font-size: 2.5rem, $color: hsla(210, 95%, 55%, 1));
+        }
+    }
+}
+
+.socials_mobile {
+    width: 100%;
+    height: 50vh;
+    z-index: -2;
+    display: grid;
+    grid-column: 100%;
+    grid-auto-rows: auto;
+    margin: 5px 0;
+    background: hsla(0, 0%, 30%, .1);
+    padding: 5px 0;
+    .social {
+        @include flex($flex-flow: column nowrap);
+        height: 100%;
+        width: 75%;
+        min-width: 75%;
+        max-width: 75%;
+        flex: 1 1 auto;
+        margin: 0 auto 5px auto;
+        &:first-child {
+            margin: 5px auto;
+        }
+        &:last-child {
+            margin: auto auto;
+        }
+        .gallery {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid: 1fr 1fr / 1fr 1fr 1fr;
+            grid-gap: 5px;
+            .picture {
+                background-size: cover !important;
+                overflow: hidden !important;
+            }
+        }
+    }
+    .instagram {
+        &_title {
+            @include title($font-size: 1.2rem, $color: hsla(0, 0%, 30%, 1));
+        }
+        &_user {
+            @include title($font-size: 2.2rem, $color: hsla(345, 80%, 55%, 1));
+        }
+    }
+    .facebook {
+        &_title {
+            @include title($font-size: 1.2rem, $color: hsla(0, 0%, 30%, 1));
+        }
+        &_user {
+            @include title($font-size: 2.2rem, $color: hsla(210, 95%, 55%, 1));
+        }
+    }
+}

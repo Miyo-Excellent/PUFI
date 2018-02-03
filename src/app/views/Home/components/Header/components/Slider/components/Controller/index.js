@@ -19,9 +19,7 @@ const Controller = ({ pictures, nextPicture, setPicture }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  pictures: state.home.header.carousel.pictures
-});
+const mapStateToProps = state => ({ });
 
 const mapDispatchToProps = dispatch => ({
   nextPicture(pictures) {

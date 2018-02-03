@@ -10,21 +10,19 @@ import { connect } from 'react-redux';
 import styles from './scss/Logo.scss';
 
 const Logo = ({
-  logo = {
-    picture: {
-      url: 'https://i1.wp.com/www.egoforum.net/wp-content/uploads/2017/12/Pufi-09.png?fit=1192%2C1125',
-      alt: "LOGO"
-    }
-  }
+  logo = {},
+  isMobile
 }) => {
   return (
-    <div className={`${styles.logo}`}>
+    <div className={isMobile ? `${styles.logo_mobile}` : `${styles.logo}`}>
       <img src={logo.picture.url} alt={logo.picture.alt} />
     </div>
   );
 };
 
 const mapStateToProps = state => ({
+  logo: state.home.nav.menu.logo,
+  isMobile: state.devices.isMobile
 });
 
 const mapDispatchToProps = dispatch => ({});

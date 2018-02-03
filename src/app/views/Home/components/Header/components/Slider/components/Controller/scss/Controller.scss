@@ -69,14 +69,16 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    z-index: 10 !important;
     .picture {
         @include base();
         &_active {
             @include base(
-                $background: hsla(200, 100%, 50%, .5),
-                $background-hover: hsla(200, 100%, 50%, .7),
-                $background-active: hsla(200, 100%, 50%, .9)
+            $background: hsla(200, 100%, 50%, .5),
+            $background-hover: hsla(200, 100%, 50%, .7),
+            $background-active: hsla(200, 100%, 50%, .9)
             );
+            z-index: 10 !important;
         }
     }
 }

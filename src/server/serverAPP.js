@@ -75,6 +75,7 @@ app // ↓↓↓↓↓↓↓↓ APP Middlewares ↓↓↓↓↓↓↓↓
 
   // Public Static
   .use(express.static(path.join(__dirname, '../../public/www')))
+  .use(express.static(path.join(__dirname, './public')))
 
   .use('/', (req, res, next) => { // Own Middlewares
     // Bots Detection

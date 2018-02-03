@@ -13,9 +13,9 @@ import Shop from './components/Buttons/Shop';
 // Styles
 import styles from './scss/Header.scss';
 
-const Header = ({ pictures ,nextPicture }) => {
+const Header = ({ pictures }) => {
   return (
-    <div className={`${styles.header}`} onClick={() => nextPicture(pictures)}>
+    <div className={`${styles.header}`}>
       <Slider />
       <Nav />
       <Title />
@@ -28,13 +28,6 @@ const mapStateToProps = state => ({
   pictures: state.home.header.carousel.pictures
 });
 
-const mapDispatchToProps = dispatch => ({
-  nextPicture(pictures) {
-    dispatch({
-      type: 'NEXT_PICTURE',
-      pictures
-    });
-  }
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -11,9 +11,9 @@ import MyShop from './components/MyShop';
 // Styles
 import styles from './scss/MiniHub.scss';
 
-const MiniHub = ({ }) => {
+const MiniHub = ({ isMobile }) => {
   return (
-    <div className={`${styles.miniHub}`}>
+    <div className={isMobile ? `${styles.miniHub_mobile}` : `${styles.miniHub}`}>
       <MyAccount />
       <MyShop />
     </div>
@@ -21,6 +21,7 @@ const MiniHub = ({ }) => {
 };
 
 const mapStateToProps = state => ({
+  isMobile: state.devices.isMobile
 });
 
 const mapDispatchToProps = dispatch => ({});

@@ -15,3 +15,21 @@
         height: 90%;
     }
 }
+
+.logo_mobile {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    >img {
+        line-height: 75px;
+        text-align: center;
+        border-radius: 50%;
+        background: #ddd;
+        display: block;
+        width: 100px;
+        height: 100px;
+    }
+}

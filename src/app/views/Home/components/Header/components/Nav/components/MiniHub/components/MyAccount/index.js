@@ -16,10 +16,11 @@ const MyAccount = ({
   clearNavLoginFields,
   nav,
   newLoginData,
-  setNewLogin
+  setNewLogin,
+  isMobile
 }) => {
   return (
-    <div className={`${styles.myAccount}`}>{ nav.login.btn.active
+    <div className={isMobile ? `${styles.myAccount_mobile}` : `${styles.myAccount}`}>{ nav.login.btn.active
       ? (
         <form className={`${styles.login_large}`}>
           <div className={`${styles.email}`}>
@@ -52,7 +53,8 @@ const MyAccount = ({
 
 const mapStateToProps = state => ({
   nav: state.home.nav,
-  newLoginData: state.home.nav.fields
+  newLoginData: state.home.nav.fields,
+  isMobile: state.devices.isMobile
 });
 
 const mapDispatchToProps = dispatch => ({

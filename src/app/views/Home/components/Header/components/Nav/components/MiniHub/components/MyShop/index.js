@@ -10,10 +10,11 @@ import { Link } from 'react-router-dom';
 import styles from './scss/MyShop.scss';
 
 const MyShop = ({
-  active = false
+  active = false,
+  isMobile
 }) => {
   return (
-    <div className={`${styles.myShop}`}>{ active
+    <div className={isMobile ? `${styles.myShop_mobile}` : `${styles.myShop}`}>{ active
       ? (
         <div className={`${styles.container}`}>
           <div className={`${styles.btn_dogger} ${styles.btn_select}`}>
@@ -31,6 +32,7 @@ const MyShop = ({
 };
 
 const mapStateToProps = state => ({
+  isMobile: state.devices.isMobile
 });
 
 const mapDispatchToProps = dispatch => ({});

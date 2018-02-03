@@ -36,6 +36,8 @@ export default function html(options) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="apple-touch-icon-precomposed" href="${appleFavicon}">
 
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
         <!-- Styles -->
         <link rel="stylesheet" href="${stylesheet}" />
 
@@ -45,6 +47,8 @@ export default function html(options) {
             height: 100%;
           }
         </style>
+
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
       </head>
       <body>
