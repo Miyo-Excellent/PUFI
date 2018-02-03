@@ -60,19 +60,19 @@ const Footer = ({ ensurances, logo, isMobile }) => {
         <h5 className={`${styles.title}`}>SEGUINOS EN</h5>
         <ul className={`${styles.list}`}>
           <li className={`${styles.social}`}>
-            <Link to='https://www.facebook.com/MiyoExcellent'>
+            <a href='https://www.facebook.com/MiyoExcellent'>
               <img src="http://localhost:3000/logo/facebook.png" alt="Facebook"/>
-            </Link>
+            </a>
           </li>
           <li className={`${styles.social}`}>
-            <Link to='https://twitter.com/miyo_excellent'>
+            <a href='https://twitter.com/miyo_excellent'>
               <img src="http://localhost:3000/logo/twitter.png" alt="Twitter"/>
-            </Link>
+            </a>
           </li>
           <li className={`${styles.social}`}>
-            <Link to='https://www.instagram.com/miyo_excellent/'>
+            <a href='https://www.instagram.com/miyo_excellent/'>
               <img src="http://localhost:3000/logo/instagram.png" alt="Instagram"/>
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
