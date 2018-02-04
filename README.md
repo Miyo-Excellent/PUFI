@@ -69,3 +69,4 @@
 
 ---
 ### [**Diseño inicial del proyecto**](https://github.com/Miyo-Excellent/PUFI/blob/Pufi/documentation/design/Pufi.jpg)
+![Diseño inicial del proyecto](https://raw.githubusercontent.com/Miyo-Excellent/PUFI/Pufi/documentation/design/Pufi.jpg"Diseño inicial del proyecto")
