@@ -1,79 +1,50 @@
-
-
-@mixin sub_triangle (
-    $content: '',
-    $display: block,
-    $width: 0,
-    $height: 0,
-    $max-width: 0,
-    $max-height: 0,
-    $min-height: 0,
-    $min-width: 0,
-    $position: absolute,
-    $top: 50%,
-    $bottom: 50%,
-    $height: 50%,
-    $left: 50%,
-    $right: 50%,
-    $transform: translate(-50%, -50%),
-    $z-index: 5,
-    $side: 'right',
-    $border-left: 20px solid hsla(210, 100%, 70%, .5),
-    $border-right: 20px solid hsla(210, 100%, 70%, .5),
-    $border-top: 10px solid transparent,
-    $border-bottom: 10px solid transparent
-    ) {
-    @mixin base($direction: 'center') {
-        display: $display;
-        width: $width;
-        max-width: $max-width;
-        min-width: $min-width;
-        height: $height;
-        min-height: $min-height;
-        max-height: $max-height;
-        position: $position;
-        z-index: $z-index;
-        @if $direction == 'top' {
-            top: auto;
-            bottom: $bottom;
-            left: $left;
-            right: $right;
-        }
-
-        @if $direction == 'bottom' {
-            top: $top;
-            bottom: auto;
-            left: $left;
-            right: $right;
-        }
-
-        @if $direction == 'left' {
-            top: $top;
-            bottom: $bottom;
-            left: auto;
-            right: $right;
-        }
-
-        @if $direction == 'right' {
-            top: $top;
-            bottom: $bottom;
-            left: $left;
-            right: auto;
-        }
-
-        @if $direction == 'center' {
-            top: $top;
-            bottom: $bottom;
-            left: $left;
-            right: $right;
-        }
+@mixin base($direction: 'center', $display: block, $width: 0, $max-width: 0, $max-height: 0, $min-height: 0, $min-width: 0, $position: absolute, $z-index: 5, $bottom: 50%, $left: 50%, $right: 50%, $top: 50%, $height: 50%) {
+    display: $display;
+    width: $width;
+    max-width: $max-width;
+    min-width: $min-width;
+    height: $height;
+    min-height: $min-height;
+    max-height: $max-height;
+    position: $position;
+    z-index: $z-index;
+    @if $direction=='top' {
+        top: auto;
+        bottom: $bottom;
+        left: $left;
+        right: $right;
     }
+    @if $direction=='bottom' {
+        top: $top;
+        bottom: auto;
+        left: $left;
+        right: $right;
+    }
+    @if $direction=='left' {
+        top: $top;
+        bottom: $bottom;
+        left: auto;
+        right: $right;
+    }
+    @if $direction=='right' {
+        top: $top;
+        bottom: $bottom;
+        left: $left;
+        right: auto;
+    }
+    @if $direction=='center' {
+        top: $top;
+        bottom: $bottom;
+        left: $left;
+        right: $right;
+    }
+}
 
+@mixin sub_triangle ( $content: '', $display: block, $width: 0, $height: 0, $max-width: 0, $max-height: 0, $min-height: 0, $min-width: 0, $position: absolute, $top: 50%, $bottom: 50%, $height: 50%, $left: 50%, $right: 50%, $transform: translate(-50%, -50%), $z-index: 5, $side: 'right', $border-left: 20px solid hsla(210, 100%, 70%, .5), $border-right: 20px solid hsla(210, 100%, 70%, .5), $border-top: 10px solid transparent, $border-bottom: 10px solid transparent) {
     &::before {
-    content: $content;
-    @include base($direction: 'center');
+        content: $content;
+        @include base($direction: 'center');
     }
-
     &_top {
         &::before {
             content: $content;
@@ -83,7 +54,6 @@
             border-bottom: 20px solid hsla(210, 100%, 70%, .5);
         }
     }
-
     &_bottom {
         &::before {
             content: $content;
@@ -93,24 +63,22 @@
             border-top: 20px solid hsla(210, 100%, 70%, .5);
         }
     }
-
     &_left {
         &::before {
-        content: $content;
-        @include base($direction: 'left');
-        border-top: $border-top;
-        border-bottom: $border-bottom;
-        border-right: $border-right;
+            content: $content;
+            @include base($direction: 'left');
+            border-top: $border-top;
+            border-bottom: $border-bottom;
+            border-right: $border-right;
         }
     }
-
     &_right {
         &::before {
-        content: $content;
-        @include base($direction: 'right');
-        border-top: $border-top;
-        border-bottom: $border-bottom;
-        border-left: $border-left;
+            content: $content;
+            @include base($direction: 'right');
+            border-top: $border-top;
+            border-bottom: $border-bottom;
+            border-left: $border-left;
         }
     }
 }
